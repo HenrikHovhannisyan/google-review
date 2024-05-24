@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feedback;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,10 +21,19 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @param Request $request
+     * @return Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $rateFilter = $request->input('rate', 'all');
+
+        $query = Feedback::query();
+        if ($rateFilter !== 'all') {
+            $query->where('rate', $rateFilter);
+        }
+        $feedbacks = $query->paginate(10);
+
+        return view('home', compact('feedbacks', 'rateFilter'));
     }
 }
