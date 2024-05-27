@@ -32,8 +32,9 @@ class HomeController extends Controller
         if ($rateFilter !== 'all') {
             $query->where('rate', $rateFilter);
         }
-        $feedbacks = $query->paginate(10);
+        $feedbacks = $query->orderBy('created_at', 'desc')->paginate(10);
 
         return view('home', compact('feedbacks', 'rateFilter'));
     }
+
 }
