@@ -23,8 +23,8 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col" width="120">Rate</th>
-                            <th scope="col">Name</th>
+                            <th scope="col" class="d-flex" width="120">Rate</th>
+                            <th scope="col" width="120">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Experience</th>
                         </tr>
