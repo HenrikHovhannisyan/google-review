@@ -38,6 +38,14 @@
             <button type="submit" onclick="sendMail()">Send</button>
         </form>
     </div>
+    <footer>
+        <div>
+            <div class="footerTitle">Rowell Crisostomo, BComm</div>
+            <div class="footerText">Licensed Mortgage Professional</div>
+            <div class="footerText">780.297.HELP (4357) </div>
+        </div>
+        <div><img class="logo" src="{{asset('img/Logo.svg')}}" alt="logo"/></div>
+    </footer>
 </div>
 <div id="myModal" class="modal">
     <div class="modal-content">

@@ -32,7 +32,7 @@ body {
     width: 100%;
     margin: auto;
     min-height: 100vh;
-    background: #AEC7F8;
+    background-color: #244743;
     font-family: Roboto_Regular,sans-serif;
 }
 
@@ -52,16 +52,26 @@ html {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .container{
-    padding: 48px;
-    background-color: #D8E4FC;
+    padding: 32px;
+    background-color:#AFB799;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 900px;
     width: 100%;
+}
+#feedbackForm{
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 h1{
     text-align: center;
@@ -129,7 +139,7 @@ button{
     padding: 10px 24px;
     border: none;
     cursor: pointer;
-    color:  #252525;
+    color: #000;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -150,6 +160,7 @@ button:hover{
     float: left;
     height: 46px;
     padding: 0 10px;
+    margin: auto;
 }
 .rate:not(:checked) > input {
     position:absolute;
@@ -195,7 +206,7 @@ button:hover{
 }
 .modal-content {
     border-radius: 12px;
-    background-color: #D8E4FC;
+    background-color: #AFB799;
     margin: 15% auto;
     padding: 20px;
     width: 30%;
@@ -223,6 +234,65 @@ p{
     justify-self: flex-end;
     height: 20px;
     cursor: pointer;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footerTitle{
+    color: white;
+    font-size:18px;
+    font-style: normal;
+    font-weight: 500 !important;
+    margin-bottom: 8px;
+}
+.footerText{
+    color: white;
+    font-size:14px;
+    font-style: normal;
+    font-weight: 400 !important;
+    letter-spacing: 0.1px;
+}
+.logo{
+    max-width:250px;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+    #feedbackForm {
+        max-width: 650px !important;
+    }
+    .controlInput{
+        max-width:650px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .container{
+        padding: 22px;
+    }
+    p{
+        font-size: 28px;
+    }
+    h1 {
+        font-size: 26px;
+        margin-bottom: 12px;
+        line-height: unset;
+    }
+    h3{
+        margin-bottom: 8px;
+    }
 }
 
 
