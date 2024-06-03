@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -61,5 +62,24 @@ class FeedbackController extends Controller
         $feedback = Feedback::findOrFail($id);
         $feedback->delete();
         return response()->json(null, 204);
+    }
+
+    /**
+     * Get feedbacks for API.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getFeedbacks(Request $request)
+    {
+        $rateFilter = $request->input('rate', 'all');
+
+        $query = Feedback::query();
+        if ($rateFilter !== 'all') {
+            $query->where('rate', $rateFilter);
+        }
+        $feedbacks = $query->orderBy('created_at', 'desc')->get();
+
+        return response()->json($feedbacks);
     }
 }
